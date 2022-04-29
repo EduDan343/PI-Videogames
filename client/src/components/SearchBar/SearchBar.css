@@ -1,0 +1,50 @@
+.SearchBar {
+    /* width: 9.5vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10vh;
+}
+
+.tituloSearchBar {
+    width: 100%;
+    color: antiquewhite;
+}
+
+.SearchBar form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 10px; */
+}
+
+.optionDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 30px;
+    color: antiquewhite;
+} 
+.optionDiv h4 {
+    padding-right: 5%;
+}
+
+.SearchBar select {
+    /* margin: 10px 0px; */
+    /* padding: 5px; */
+    /* height: 100%; */
+    text-align: center;
+    width: 10vw;
+}
+
+#ApplyButton,
+#ResetButton {
+    margin: 10px 0px;
+    padding: 10px;
+    /* margin-top: 10px; */
+    width: auto;
+}

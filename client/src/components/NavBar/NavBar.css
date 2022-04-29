@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.NavContainer {
+    display: flex;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+    /* padding: 0 50px; */
+    /* flex-wrap: wrap; */
+}
+
+#appVideogames,
+#home, 
+#creategame, 
+#about,
+.separador{
+    padding-right: 8px;
+    color: aliceblue;
+}
+
+.NavSearch {
+    width: 50%;
+    /* background-color: rgb(76, 178, 204); */
+}
+
+.NavSearch .inputSearch {
+    /* padding-right: 10%; */
+    font-size: 15px;
+    height: 30px;
+    margin-right: 4%;
+    text-align: center;
+    width: 55%;
+    border: 3px solid mediumslateblue;
+    border-radius: 25px;
+}
+
+.NavSearch .BtnSearch {
+    font-size: 15px;
+    padding: 5px 10px ;
+}
+
+.NavSearch .BtnSearch:hover{
+    background-color: rgb(171, 25, 190);
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 18px;
+
+}
+
+.nameApp {
+    /* position: relative;
+    left: 20px; */
+    /* padding: 0 20px; */
+}
+
+.NavLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.NavLinks h3 {
+    /* padding-right: 25px; */
+}
+
+#home {
+    /* position: relative; */
+    /* left: 20px; */
+}

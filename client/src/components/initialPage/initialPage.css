@@ -1,0 +1,20 @@
+body{
+    background-color: aquamarine;
+    /* width: auto;
+    height: 100vh; */
+}
+.introPage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.introText{
+    padding-top: 300px;
+}
+
+.introButton{
+    padding-top: 100px;
+}

@@ -1,0 +1,51 @@
+.AboutMain{
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.586);
+}
+
+.Tecnologias{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    width: 40% auto;
+}
+
+.ListaAbout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.ListaAbout li{
+    padding: 15px;
+    width: 50%;
+}
+
+#AboutTitle{
+    margin: 20px;
+}
+
+.AboutDescription {
+    font-size: 20px;
+    width: 50%;
+    margin: 15px auto;
+    margin-bottom: 30px;
+}
+.AboutDescription h3{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.AboutDescription section{
+    font-size: 18px;
+}
+
+.funcionamientoAbout{
+    font-size: 20px;
+}
+.funcionamientoAbout h3{
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.funcionamientoAbout li{
+    padding-bottom: 10px;
+}
+

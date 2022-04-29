@@ -1,0 +1,118 @@
+#TitleForm {
+    color: aliceblue;
+    margin: 20px auto;
+}
+
+.seccion1Form{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    margin: 25px auto;
+}
+.FechaForm,
+.NombreForm {
+    color: aliceblue;
+    font-size: 20px;
+}
+.FechaForm label,
+.NombreForm label{
+    padding-right: 20px;
+}
+.FechaForm input,
+.NombreForm input{
+    font-size: 15px;
+    height: 25px;
+    text-align: center;
+    width: 20vw;
+}
+
+.DescriptionForm{
+    color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+    width: 50vw;
+    margin: 50px auto;
+}
+.DescriptionForm label{
+    padding-right: 30px;
+}
+.DescriptionForm textarea{
+    font-size: 15px;
+    height: 60px;
+    width: 50vw;
+}
+
+
+.seccion2Form{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+    margin: 25px auto;
+}
+.RatingForm,
+.ImagenForm{
+    color: aliceblue;
+    font-size: 20px;
+}
+.RatingForm label,
+.ImagenForm label{
+    padding-right: 20px;
+}
+.RatingForm input,
+.ImagenForm input{
+    font-size: 15px;
+    height: 25px;
+    text-align: center;
+    width: 20vw;
+}
+
+.GenerosForm,
+.PlataformasForm {
+    color: aliceblue;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: 25px auto;
+}
+.GenerosForm h4,
+.PlataformasForm h4{
+    padding: 10px 0;
+    width: 100%;
+}
+.GenerosForm .genresCheck,
+.PlataformasForm .platformsCheck {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.itemGenre,
+.itemPlatform{
+    padding: 10px;
+    width: 25%;
+}
+
+#formButton{
+    background-color: aqua;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 30%;
+}
+
+.FormularioControlado{
+    background-color: rgba(0, 0, 0, 0.62);
+    width: 70%;
+    margin: 30px auto;
+}
+
+.danger {
+    color: red;
+}
+/* .formulario{
+    background-color: rgba(0, 0, 0, 0.62);
+    width: 70%;
+    margin: 30px auto;
+} */

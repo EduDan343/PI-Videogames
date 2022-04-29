@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.videogame {
+    background-color: aliceblue;
+    /* border: 5px solid blue;
+    width: 500px;
+    min-height: 500px;
+    position: relative;
+    margin-bottom: 20px; */
+    overflow: hidden;
+    box-shadow: 0 2px 20px greenyellow;
+    border-radius: 1.2rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    cursor: pointer;
+    transition: transform 500ms ease-in ;
+    width: 330px;
+    /* &imgGame{
+        height: 12rem;
+    } */
+
+} 
+.videogame:hover{
+    transform: scale(1.02);
+}
+.imgGame {
+    /* background-position: top; */
+    /* background-color: rgb(208, 218, 82);
+    position: relative; */
+    /* height: 60%; */
+    /* width: 100%;
+    bottom: 0; */
+    height: 13rem;
+    width: 100%;
+    object-fit: cover;
+}
+img {
+    width: 100%;
+}
+.genres,
+.gameName,
+.ratingGame{
+    padding: 0.5rem;
+    /* color: rgb(20, 18, 18); */
+}
+
+
+
+.img-card {
+    /* height: 100%;
+    width: auto;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat; */
+}
+
+.genres span {
+    padding-right: 10px;
+}
+
+.platforms span {
+    padding-right: 20px;
+}
+
+.icon-prueba {
+    background-color: aqua;
+    position: relative;
+    width: 100%;
+    /* height: 50px; */
+    /* height: 50px ; */
+}
+
+.icon-prueba img {
+    width: 20%;
+    padding: 0px;
+
+}

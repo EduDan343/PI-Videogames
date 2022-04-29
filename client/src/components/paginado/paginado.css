@@ -1,0 +1,30 @@
+.numeroPaginado {
+    padding: 0 10px;
+    background-color: aqua;
+    margin: 0 1.5vw;
+}
+
+.numeroPaginado:hover{
+    cursor: pointer;
+}
+
+#selected{
+    background-color: blueviolet;
+    color: black;
+    font-size: large;
+}
+
+.prev,
+.next{
+    background-color: greenyellow;
+    font-size: 15px;
+    padding: 3px 5px;
+}
+.prev:hover,
+.next:hover{
+    cursor: pointer;
+}
+
+.limit{
+    display: none;
+}
