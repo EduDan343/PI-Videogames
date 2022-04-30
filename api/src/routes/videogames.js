@@ -1,17 +1,13 @@
 const { Router } = require('express');
-const express = require('express');
 const Sequelize = require('sequelize')
 const axios = require('axios');
 const Op = Sequelize.Op;
 const router = Router();
-const { Videogame, Genre } = require('../db.js');
-const p = process.env;
+const { Videogame, Genre, API_KEY } = require('../db.js');
 
-// router.use(express.json());
-// router.use(express.json());
 let nameGameApi = async(name) => {  //devuelve 15 juegos
     try {
-        const {data} = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${p.API_KEY}`)
+        const {data} = await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
         const apiGames = []
         if(data.results.length == 0){
             throw new Error('El juego no fue encontrado');

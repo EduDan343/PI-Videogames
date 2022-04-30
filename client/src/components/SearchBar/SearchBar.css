@@ -1,15 +1,16 @@
 .SearchBar {
     /* width: 9.5vw; */
+    border-radius: 1.1rem;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 10vh;
+    height: 7vh;
 }
 
 .tituloSearchBar {
-    width: 100%;
+    /* width: 100%; */
     color: antiquewhite;
 }
 
@@ -37,6 +38,8 @@
     /* margin: 10px 0px; */
     /* padding: 5px; */
     /* height: 100%; */
+    border-radius: 12px;
+    height: 3vh;
     text-align: center;
     width: 10vw;
 }

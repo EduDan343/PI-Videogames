@@ -23,8 +23,10 @@
 }
 
 .SearchBar{
-    background-color: #0a6da3;
+    /* background-color: #0a6da3; */
+    background-color: #5c4ab6;
     grid-column: 1/20;
+    margin-top: 0.8rem;
     /* grid-row: 3/20; */
 }
 
@@ -52,7 +54,7 @@
     /* grid-template-columns: repeat(4, 1fr); */
     /* grid-template-rows: 1fr 1fr; */
     /* gap: 2rem; */
-    grid-gap: 1rem;
+    grid-gap: 1.2rem;
     /* height: 100vh; */
     display: flex;
     flex-wrap: wrap;

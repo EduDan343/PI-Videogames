@@ -3,9 +3,8 @@ const express = require('express');
 const router = Router();
 const axios = require('axios');
 router.use(express.json());
-const { API_KEY } = require('../db.js')
 
-const { Videogame, Genre, videogamesGenre } = require('../db.js')
+const { Genre, API_KEY } = require('../db.js')
 
 let genreApi = async() => {     //devuelve todos los generos
     //const genresDb = await Genre.findAll();

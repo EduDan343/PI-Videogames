@@ -7,6 +7,7 @@
 }
 
 .NavContainer {
+    border-radius: 1rem;
     display: flex;
     height: 10vh;
     align-items: center;

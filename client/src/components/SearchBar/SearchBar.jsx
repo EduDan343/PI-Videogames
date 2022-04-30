@@ -42,38 +42,38 @@ const SearchBar = ({videogames, genres, GetGenres, SelectGenre, SortGames, Sourc
         })
     }
 
-    const handleChangeGenres = (event) => {
-        // setGenres({value: event.target.value} );
-        setAllValues({
-            ...AllValues,
-            [event.target.name] : event.target.value,
-        })
-        // console.log('Valor seleccionado ', Genres.value )
-    }
+    // const handleChangeGenres = (event) => {
+    //     // setGenres({value: event.target.value} );
+    //     setAllValues({
+    //         ...AllValues,
+    //         [event.target.name] : event.target.value,
+    //     })
+    //     // console.log('Valor seleccionado ', Genres.value )
+    // }
 
-    const handleChangeAlphabetical = (event) => {
-        // setAlphabetical({value: event.target.value})
-        setAllValues({
-            ...AllValues,
-            [event.target.name] : event.target.value,
-        })
-    }
+    // const handleChangeAlphabetical = (event) => {
+    //     // setAlphabetical({value: event.target.value})
+    //     setAllValues({
+    //         ...AllValues,
+    //         [event.target.name] : event.target.value,
+    //     })
+    // }
     
-    const handleChangeSource = (event) => {
-        // setSource({ value: event.target.value })
-        setAllValues({
-            ...AllValues,
-            [event.target.name] : event.target.value,
-        })
-    }
+    // const handleChangeSource = (event) => {
+    //     // setSource({ value: event.target.value })
+    //     setAllValues({
+    //         ...AllValues,
+    //         [event.target.name] : event.target.value,
+    //     })
+    // }
 
-    const handleChangeRating = (event) => {
-        // setRating({ value: event.target.value })
-        setAllValues({
-            ...AllValues,
-            [event.target.name] : event.target.value,
-        })
-    }
+    // const handleChangeRating = (event) => {
+    //     // setRating({ value: event.target.value })
+    //     setAllValues({
+    //         ...AllValues,
+    //         [event.target.name] : event.target.value,
+    //     })
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -101,16 +101,16 @@ const SearchBar = ({videogames, genres, GetGenres, SelectGenre, SortGames, Sourc
                     <h4>Alphabetical</h4>
                     <select id="ByAlphabetical" value={AllValues.Alphabetical} onChange={handleChange} 
                         name='Alphabetical'>
+                        <option value='Default'>Default</option>
                         <option value='Z-A'>Z-A</option>    
                         <option value='A-Z'>A-Z</option>
-                        <option value='Default'>Default</option>
                     </select>
                 </div>
                 <div className="optionDiv">
                     <h4>Source</h4>
                     <select id="BySource" value={AllValues.Source} onChange={handleChange} name='Source' >
+                        <option value='All'>Data Source</option>
                         <option value='API'>API</option>
-                        <option value='All'>Select Data Source</option>
                         <option value='DATABASE'>DATABASE</option>
                     </select>
                 </div>

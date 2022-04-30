@@ -1,9 +1,7 @@
 const { Router } = require('express');
-const express = require('express');
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op;
 const axios = require('axios');
 const p = process.env;
+const router = Router();
 
 
 // Importar todos los routers;
@@ -14,7 +12,6 @@ const videogames = require("./videogames.js");
 const genre = require("./genre.js")
 const videogame = require('./videogame.js')
 
-const router = Router();
 // router.use(express.json());
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
@@ -62,22 +59,22 @@ router.use('/videogame', videogame);
 //     res.send(AllData.concat(genres));
 // })
 
-let genreApi = async() => {     //devuelve todos los generos
-    //const genresDb = await Genre.findAll();
-    // if(genresDb.length === 0){
+// let genreApi = async() => {     //devuelve todos los generos
+//     //const genresDb = await Genre.findAll();
+//     // if(genresDb.length === 0){
         
-    // }
-    const { data } = await axios.get(`https://api.rawg.io/api/genres?key=${p.API_KEY}`);
-    const genres = data.results.map(x=> {
-        let obj = {}
-        obj.id = x.id;
-        obj.name = x.name;
-        return obj;
-    })
-    //console.log(genresDb, genresDb.length);
-    //console.log(genres)
-    return genres;
-}
+//     // }
+//     const { data } = await axios.get(`https://api.rawg.io/api/genres?key=${p.API_KEY}`);
+//     const genres = data.results.map(x=> {
+//         let obj = {}
+//         obj.id = x.id;
+//         obj.name = x.name;
+//         return obj;
+//     })
+//     //console.log(genresDb, genresDb.length);
+//     //console.log(genres)
+//     return genres;
+// }
 
 // let getApiGames = async() => {  //devuelve 100 juegos
 //     let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${p.API_KEY}`);
@@ -162,36 +159,36 @@ let genreApi = async() => {     //devuelve todos los generos
 //     }
 // }
 
-let idGameAPi = async(id) => {
-    try {
-        const {data} = await axios.get(`https://api.rawg.io/api/games/${id}?key=${p.API_KEY}`);
-        // if(!data.id) throw new Error('El juego no fue encontrado');
-        // console.log(data.id, data.results);
-        const gameDetail = {
-                id: data.id,
-                name: data.name,
-                image: data.background_image,
-                rating: data.rating,
-                released: data.released ,
-                genres: data.genres.map( data => {
-                    return{
-                        id: data.id,
-                        name: data.name,
-                    }
-                }),
-                platforms: data.platforms.map( data => {
-                    return{
-                        id: data.platform.id,
-                        name: data.platform.name,
-                    }
-                }),          //array dentro de otro array checar como viene la info...
-                description: data.description_raw,  //texto plano sin etiqueta <p>
-            };
-        return gameDetail; 
-    } catch (error) {
-        throw new Error('El juego no fue encontrado!!!!:u');
-    }
-}
+// let idGameAPi = async(id) => {
+//     try {
+//         const {data} = await axios.get(`https://api.rawg.io/api/games/${id}?key=${p.API_KEY}`);
+//         // if(!data.id) throw new Error('El juego no fue encontrado');
+//         // console.log(data.id, data.results);
+//         const gameDetail = {
+//                 id: data.id,
+//                 name: data.name,
+//                 image: data.background_image,
+//                 rating: data.rating,
+//                 released: data.released ,
+//                 genres: data.genres.map( data => {
+//                     return{
+//                         id: data.id,
+//                         name: data.name,
+//                     }
+//                 }),
+//                 platforms: data.platforms.map( data => {
+//                     return{
+//                         id: data.platform.id,
+//                         name: data.platform.name,
+//                     }
+//                 }),          //array dentro de otro array checar como viene la info...
+//                 description: data.description_raw,  //texto plano sin etiqueta <p>
+//             };
+//         return gameDetail; 
+//     } catch (error) {
+//         throw new Error('El juego no fue encontrado!!!!:u');
+//     }
+// }
 
 // router.get('/genres', async(req, res) => {
 //     try {
@@ -263,41 +260,41 @@ let idGameAPi = async(id) => {
 //     }
 // })
 
-router.get('/videogame/:id', async(req, res) => {
-    const { id } = req.params;
-    console.log(req.params, id, typeof(id));
-    try {
-        if(id){
-            // if(id.length <=5){
-            if(Number(id)){
-                const idGame = await idGameAPi(id);
-                // console.log(id);
-                console.log(idGame);
-                res.send(idGame);
-            } else{
-                let dbGame = await Videogame.findByPk(id, {
-                    include: [
-                        {
-                          model: Genre,
-                          attributes: ["name"],
-                          through: {
-                            attributes: [],
-                          },
-                        }
-                    ],
-                });
-                console.log(dbGame);
-                res.send(dbGame);
-            }
-        }
-        else{
-            res.send('No se recibio el id del juego...')
-        }  
-    } catch (error) {
-        res.send(error.message);
-    }
+// router.get('/videogame/:id', async(req, res) => {
+//     const { id } = req.params;
+//     console.log(req.params, id, typeof(id));
+//     try {
+//         if(id){
+//             // if(id.length <=5){
+//             if(Number(id)){
+//                 const idGame = await idGameAPi(id);
+//                 // console.log(id);
+//                 console.log(idGame);
+//                 res.send(idGame);
+//             } else{
+//                 let dbGame = await Videogame.findByPk(id, {
+//                     include: [
+//                         {
+//                           model: Genre,
+//                           attributes: ["name"],
+//                           through: {
+//                             attributes: [],
+//                           },
+//                         }
+//                     ],
+//                 });
+//                 console.log(dbGame);
+//                 res.send(dbGame);
+//             }
+//         }
+//         else{
+//             res.send('No se recibio el id del juego...')
+//         }  
+//     } catch (error) {
+//         res.send(error.message);
+//     }
    
-});
+// });
 
 
 module.exports = router;
