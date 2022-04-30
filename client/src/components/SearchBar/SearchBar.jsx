@@ -4,10 +4,6 @@ import { GetGenres, SelectGenre, SortGames, SourceGames, RatingGames } from "../
 import './SearchBar.css'
 
 const SearchBar = ({videogames, genres, GetGenres, SelectGenre, SortGames, SourceGames, RatingGames}) => {
-    // const [Genres, setGenres] = useState({ value : 'All' });
-    // const [Source, setSource] = useState({ value : 'All' });
-    // const [Alphabetical, setAlphabetical] = useState({ value : 'Default'});
-    // const [Rating, setRating] = useState({ value: 'Default'});
     const [AllValues, setAllValues] = useState({
         Genres : 'All',
         Source : 'All',
@@ -19,21 +15,11 @@ const SearchBar = ({videogames, genres, GetGenres, SelectGenre, SortGames, Sourc
             GetGenres();
             console.log('GetGenres ejecutado...')
         }
-        // SelectGenre(Genres.value)
-        // console.log(Genres.value , typeof(Genres.value))
-        // SortGames(Alphabetical.value)
-        // console.log(Alphabetical.value)
-        // SourceGames(Source.value)
-        // console.log(Source.value)
-        // RatingGames(Rating.value)
-        // console.log(Rating.value)
         SelectGenre(AllValues.Genres);
         SortGames(AllValues.Alphabetical);
         SourceGames(AllValues.Source);
         RatingGames(AllValues.Rating);
     },[AllValues]);
-
-    // console.log(genres);
 
     const handleChange = (event) => {
         setAllValues({
@@ -42,48 +28,14 @@ const SearchBar = ({videogames, genres, GetGenres, SelectGenre, SortGames, Sourc
         })
     }
 
-    // const handleChangeGenres = (event) => {
-    //     // setGenres({value: event.target.value} );
-    //     setAllValues({
-    //         ...AllValues,
-    //         [event.target.name] : event.target.value,
-    //     })
-    //     // console.log('Valor seleccionado ', Genres.value )
-    // }
-
-    // const handleChangeAlphabetical = (event) => {
-    //     // setAlphabetical({value: event.target.value})
-    //     setAllValues({
-    //         ...AllValues,
-    //         [event.target.name] : event.target.value,
-    //     })
-    // }
-    
-    // const handleChangeSource = (event) => {
-    //     // setSource({ value: event.target.value })
-    //     setAllValues({
-    //         ...AllValues,
-    //         [event.target.name] : event.target.value,
-    //     })
-    // }
-
-    // const handleChangeRating = (event) => {
-    //     // setRating({ value: event.target.value })
-    //     setAllValues({
-    //         ...AllValues,
-    //         [event.target.name] : event.target.value,
-    //     })
-    // }
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        // alert('Your favorite flavor is: ' + this.state.value);
         console.log(event.target.value)
     }
     return(
         <div className="SearchBar">
             <div className="tituloSearchBar">
-                <h4>Browse Categories</h4>
+                <h4>Filter Categories</h4>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="optionDiv">

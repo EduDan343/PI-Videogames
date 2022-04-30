@@ -44,7 +44,7 @@ let nameGameApi = async(name) => {  //devuelve 15 juegos
 }
 
 let getApiGames = async() => {  //devuelve 100 juegos
-    let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${p.API_KEY}`);
+    let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
     const games = []
 
     for (let i = 0; i < 5; i++) {
@@ -115,7 +115,6 @@ router.get('/search', async(req, res, next) => {
 })
 
 router.get('/', async(req, res) => {
-    console.log(p.API_KEY)
     try {
         const apiGames = await getApiGames();
         const dbGames = await Videogame.findAll(
@@ -131,13 +130,11 @@ router.get('/', async(req, res) => {
             ],
         }
         );
-
-        res.send(apiGames.concat(dbGames));  
-        // console.log(apiGames);
-        // console.log(dbGames);
-        // res.send(dbGames)
+        res.send(apiGames.concat(dbGames));
+        // res.send(apiGames)  
     } catch (error) {
-        res.send(error);
+        // res.send(error);
+        res.send('entre al catch videogames')
     }
     // res.send('entre')
 })

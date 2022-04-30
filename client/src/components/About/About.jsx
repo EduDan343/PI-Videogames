@@ -6,8 +6,18 @@ const about = () => {
         <main className="AboutMain">
             <NavBar />
             <h1 id='AboutTitle'>Individual Project - Henry Videogames</h1>
-            <div className='Tecnologias'>
-                <h3>Tecnologias usadas: </h3>
+            <div className='AboutDescription'>
+                <h3>Descripcion</h3>
+                <section>
+                    Biblioteca de videojuegos con ¡Mas de 500 000 juegos disponibles!, en la que podras encontrar toda la informacion sobre tu juego
+                    favorito.
+                    Esta pagina se trata de una SPA(Single Page Aplication) para favorecer la experiencia de usuario. 
+                    La informacion de los videojuegos es consultada desde la API rawg.io     
+                </section>
+            </div>
+            <div className='aboutFuncionamiento'>
+                <div className='Tecnologias'>
+                    <h3>Tecnologias usadas: </h3>
                     <ul className='ListaAbout'>
                         <li>HTML</li>
                         <li>CSS</li>
@@ -17,28 +27,22 @@ const about = () => {
                         <li>Sequelize</li>
                         <li>PostgreSQL</li>
                     </ul>
-            </div>
-            <div className='AboutDescription'>
-                <h3>Descripcion</h3>
-                <section>Descripcion: App desarrollada con el tema de Videojuegos, se trata de una SPA(single page aplication) en la cual
-                    la informacion es obtenida desde una API de videojuegos.     
-                </section>
-            </div>
-            <div className='funcionamientoAbout'>
-                <h3>Funcionamiento de la App Videogames</h3>
-                <ul>
-                    <li>Busqueda de videojuegos por nombre</li>
-                    <li>Formulario para creacion de videojuegos</li>
-                    <li>Filtrado y ordenamiendo de los videojuegos, donde podemos filtrar por:
-                        <ul>
-                            <li>Genero</li>
-                            <li>Orden alfabetico</li>
-                            <li>Rating</li>
-                            <li>Origen (API , Base de datos, Todos)</li>  
-                        </ul>
-                    </li>
-                    <li>Detalle de cada videojuego</li>
-                </ul>
+                </div>
+                <div className='funcionamientoAbout'>
+                    <h3>Funcionamiento de la App Videogames</h3>
+                    <h4>Puedes buscar y ordenar los juegos por:</h4>
+                    <div className='ordenamiento'>
+                        <span>Nombre</span>
+                        <span>Id</span>
+                        <span>Genero</span>
+                        <span>Orden alfabetico</span>
+                        <span>Rating</span>
+                        <span>Origen (API , Base de datos, Todos)</span>  
+                    </div>
+                    <h4>Al hacer clic en una card desplegara el detalle de cada videojuego</h4>
+                    <h4>Quieres crear un nuevo juego?</h4>
+                    <h5>¡Adelante! Utiliza el formulario de creacion de videojuegos</h5>
+                </div>
             </div>
         </main>
     )

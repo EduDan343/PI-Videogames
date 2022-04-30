@@ -7,10 +7,6 @@ router.use(express.json());
 const { Genre, API_KEY } = require('../db.js')
 
 let genreApi = async() => {     //devuelve todos los generos
-    //const genresDb = await Genre.findAll();
-    // if(genresDb.length === 0){
-        
-    // }
     const { data } = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`);
     const genres = data.results.map(x=> {
         let obj = {}
@@ -18,8 +14,6 @@ let genreApi = async() => {     //devuelve todos los generos
         obj.name = x.name;
         return obj;
     })
-    //console.log(genresDb, genresDb.length);
-    //console.log(genres)
     return genres;
 }
 
@@ -36,11 +30,9 @@ router.get('/', async(req, res) => {
             res.send({msg: 'datos enviados a la base de datos', genres: genresApi})
         } else{
             res.send({msg: 'datos recibidos desde la base de datos...', genres : genreDb})
-        }
-        //res.send('Ruta games completada')      
+        }  
     } catch (error) {
         res.send(error);
     }
-    // res.send(genresApi)
 })
 module.exports = router;

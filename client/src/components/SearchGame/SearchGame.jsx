@@ -7,7 +7,6 @@ import { GetGameByName } from '../../redux/actions'
 import './SearchGame.css'
 
 let actualizado = false;
-let gameActual = '';
 
 const SearchGame = ({searchVideogames, GetGameByName}) => {
     const { game } = useParams();
