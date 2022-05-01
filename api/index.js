@@ -21,7 +21,7 @@ const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => { //como force esta en true se van a borrar todos los cambios de la DB
+conn.sync({ force: false }).then(() => { //como force esta en true se van a borrar todos los cambios de la DB
   server.listen(process.env.PORT, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   });
