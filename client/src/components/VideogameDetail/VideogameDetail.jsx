@@ -9,7 +9,7 @@ const VideogameDetail = () => {
     const { id } = useParams();
 
     useEffect( () => {
-        axios.get(`http://localhost:3001/videogame/${id}`)
+        axios.get(`/videogame/${id}`)
         .then( res => setVideogame(res.data))
         .catch( error => console.log(error) )
     },[id])
