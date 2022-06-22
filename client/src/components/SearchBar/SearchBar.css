@@ -29,10 +29,32 @@
     align-items: center;
     margin-right: 30px;
     color: antiquewhite;
+    width: 11rem;
 } 
+
 .optionDiv h4 {
-    padding-right: 5%;
+    padding-right: 5px;
 }
+
+#ByGenres,
+#BySource,
+#Rating {
+    /* color: beige; */
+    /* background-color: black; */
+    font-weight: bold;
+}
+
+#ByGenres:hover,
+#BySource:hover,
+#Rating:hover {
+    color: beige;
+    background-color: black;
+}
+
+/* .optionDiv .SearchSelect :hover {
+    color: beige;
+    background-color: black;
+} */
 
 .SearchBar select {
     /* margin: 10px 0px; */

@@ -6,28 +6,52 @@
     padding: 0;
 }
 
+#appVideogames:hover,
+#home:hover,
+#creategame:hover,
+#about:hover{
+    color: pink;
+}
+
+/* #home,
+#creategame,
+#about {
+    color: aliceblue;
+} */
+
 .NavContainer {
     border-radius: 1rem;
     display: flex;
-    height: 10vh;
+    /* height: 10vh; */
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
     /* padding: 0 50px; */
-    /* flex-wrap: wrap; */
 }
 
 #appVideogames,
 #home, 
-#creategame, 
 #about,
+#creategame{
+    padding-right: 8px;
+    color: aliceblue;
+} 
 .separador{
     padding-right: 8px;
     color: aliceblue;
 }
 
 .NavSearch {
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 4rem;
+    width: 21rem;
     /* background-color: rgb(76, 178, 204); */
+}
+
+.formNavSearch {
+
 }
 
 .NavSearch .inputSearch {
@@ -36,42 +60,48 @@
     height: 30px;
     margin-right: 4%;
     text-align: center;
-    width: 55%;
+    width: 15rem;
     border: 3px solid mediumslateblue;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .NavSearch .BtnSearch {
+    display: inline-block;
     font-size: 15px;
     padding: 5px 10px ;
 }
 
 .NavSearch .BtnSearch:hover{
     background-color: rgb(171, 25, 190);
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: aliceblue;
-    font-size: 18px;
+    font-size: 16px;
 
 }
 
-.nameApp {
-    /* position: relative;
-    left: 20px; */
-    /* padding: 0 20px; */
-}
+/* .nameApp {
+    position: relative;
+    left: 20px;
+    padding: 0 20px;
+} */
 
 .NavLinks {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    /* text-decoration:none; */
 }
 
-.NavLinks h3 {
-    /* padding-right: 25px; */
+.NavLinks a:link, a:visited, a:active {
+    text-decoration:none;
+}
+/* .NavLinks h4:hover {
+    color: rgb(192, 36, 198);
+} */
+
+.nameApp a:link, a:visited, a:active {
+    text-decoration:none;
 }
 
-#home {
-    /* position: relative; */
-    /* left: 20px; */
-}
+
+

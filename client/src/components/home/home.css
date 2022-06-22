@@ -61,3 +61,12 @@
     justify-content: center;
     /* margin: 1rem; */
 }
+
+/* .gamesContainer a {
+    border: 3px solid aliceblue;
+} */
+
+.gamesContainer a:link, a:visited, a:active {
+    text-decoration:none;
+    color: black;
+}

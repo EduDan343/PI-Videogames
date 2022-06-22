@@ -44,34 +44,72 @@ let nameGameApi = async(name) => {  //devuelve 15 juegos
 }
 
 let getApiGames = async() => {  //devuelve 100 juegos
-    let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-    const games = []
-
-    for (let i = 0; i < 5; i++) {
-        apiGames.data.results.forEach( game => {
-            let obj = {
-                id: game.id,
-                name: game.name,
-                image: game.background_image,
-                genres: game.genres.map( data => {
-                    return{
-                        id: data.id,
-                        name: data.name
-                    }
-                }),
-                rating: game.rating,
-                platforms: game.platforms.map( p => {
-                    return(
-                        p.platform.name
-                    )
-                })
-            };
-            games.push(obj);
-        });
-        apiGames = await axios.get(`${apiGames.data.next}`);           
+    // let apiGames = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=${i+1}`);
+    let games = [];
+    // const pageGames = [];
+    const apiGames = async(page) => {
+        return await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=${page}`)
     }
     
-    // return apiGames;
+    //for (let i = 0; i < ciclos; i++) {
+        //pageGames.push(apiGames(i+1))
+        // apiGames.data.results.forEach( game => {
+        //     let obj = {
+        //         id: game.id,
+        //         name: game.name,
+        //         image: game.background_image,
+        //         genres: game.genres.map( data => {
+        //             return{
+        //                 id: data.id,
+        //                 name: data.name
+        //             }
+        //         }),
+        //         rating: game.rating,
+        //         platforms: game.platforms.map( p => {
+        //             return(
+        //                 p.platform.name
+        //             )
+        //         })
+        //     };
+        //     games.push(obj);
+        // });
+        // console.log(apiGames.data.next, apiGames)
+        // console.log(apiGames);
+        // apiGames = await axios.get(`${apiGames.data.next}`);           
+    //}
+
+    // console.log(pageGames);
+
+    await Promise.all([apiGames(1),apiGames(2),apiGames(3),apiGames(4),apiGames(5)])
+    .then( res => {
+        console.log(res)
+        for (let i = 0; i < res.length; i++) {
+            res[i].data.results.forEach( game => {
+                let obj = {
+                    id: game.id,
+                    name: game.name,
+                    image: game.background_image,
+                    genres: game.genres.map( data => {
+                        return{
+                            id: data.id,
+                            name: data.name
+                        }
+                    }),
+                    rating: game.rating,
+                    platforms: game.platforms.map( p => {
+                        return(
+                            p.platform.name
+                        )
+                    })
+                };
+                games.push(obj);
+            });            
+        }
+    }).catch ( err => {
+        console.warn( err )
+        throw new Error('Error al buscar los 100 juegos...');
+    })
+
     return games;
 }
 
@@ -130,11 +168,13 @@ router.get('/', async(req, res) => {
             ],
         }
         );
-        res.send(apiGames.concat(dbGames));
+        // res.send(apiGames.concat(dbGames));
+        console.log(apiGames);
+        res.send(apiGames);
         // res.send(apiGames)  
     } catch (error) {
-        // res.send(error);
-        res.send('entre al catch videogames')
+        res.send(error.message);
+        // res.send('entre al catch videogames')
     }
     // res.send('entre')
 })

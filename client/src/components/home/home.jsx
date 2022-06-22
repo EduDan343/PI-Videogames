@@ -36,7 +36,7 @@ const Videogames = ({ GetAllGames, filteredGames, }) => {
         <NavBar key='NavBar' />
         {/* <div className='Menu'> */}
             {/* <h3>Filter By:</h3> */}
-        <SearchBar key='SearchBar' />    
+        <SearchBar key='SearchBar' paginado={ paginado } />    
         {/* </div> */}
         <div className='gamesContainer' key='gamesContainer' >
             <Paginado cardsPage={cardsPage} filteredGames={filteredGames.length} 

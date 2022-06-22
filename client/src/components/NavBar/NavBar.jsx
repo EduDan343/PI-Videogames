@@ -29,7 +29,7 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className='NavSearch'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className='formNavSearch'>
                     <input className='inputSearch' type='search' name='searchGame' placeholder='Search videogame by name' 
                         onChange={handleChangeInput} />
                     <Link to={'/search/' + input} >
